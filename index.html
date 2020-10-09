@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>TODO APP</title>
 </head>
 <body>
 <h1>todos</h1>
 <div class="todo-wrapper">
-    <div class="todo-creator">
-        <button id="create-btn">Create</button>
-        <input type="text" id="todo-input" placeholder="What needs to be done?">
-    </div>
-    <ul id ="todo-list">
-        <li class="unchecked-todo">
-            <input type="checkbox">
-            <label>HTML</label>
-            <button class="delete-btn">del</button>
+    <nav class="todo-creator">
+        <button class="add-btn" aria-label="Add new todo">Add</button>
+        <input type="text" id="todo-input" placeholder="What needs to be done?" aria-label="Todo name">
+    </nav>
+    <ul class="todo-list">
+        <li>
+            <span class="todo-element">
+                <input type="checkbox" class="todo-element-checkbox" aria-label="Set as done">
+                <span class="todo-element-name">HTML</span>
+                <button class="delete-btn" aria-label="Delete todo" hidden="hidden">del</button>
+            </span>
         </li>
-        <li class="unchecked-todo">
-            <input type="checkbox">
-            <label>CSS</label>
-            <button class="delete-btn">del</button>
+        <li>
+            <span class="todo-element">
+                <input type="checkbox" class="todo-element-checkbox" aria-label="Set as done">
+                <span class="todo-element-name">CSS</span>
+                <button class="todo-delete-btn" aria-label="Delete todo" hidden="hidden">del</button>
+            </span>
         </li>
-        <li class="unchecked-todo">
-            <input type="checkbox">
-            <label>JS</label>
-            <button class="delete-btn">del</button>
+        <li>
+            <span class="todo-element">
+                <input type="checkbox" class="todo-element-checkbox" aria-label="Set as done">
+                <span class="todo-element-name">JS</span>
+                <button class="todo-delete-btn" aria-label="Delete todo" hidden="hidden">del</button>
+            </span>
         </li>
-        <li class="unchecked-todo">
-            <input type="checkbox">
-            <label>JS tools</label>
-            <button class="delete-btn">del</button>
+        <li>
+            <span class="todo-element">
+                <input type="checkbox" class="todo-element-checkbox" aria-label="Set as done">
+                <span class="todo-element-name">JS tools</span>
+                <button class="todo-delete-btn" aria-label="Delete todo" hidden="hidden">del</button>
+             </span>
         </li>
     </ul>
-    <div class="todo-footer">
-        <p id="items-left">3 items left</p>
-        <nav class="todo-categories">
-            <input type="radio" id="all" name="category">
+    <footer>
+        <span class="items-left">3 items left</span>
+        <nav class="categories">
+            <input type="radio" id="all" name="category" aria-label="Switch to all todos">
             <label for="all">All</label>
-            <input type="radio" id="active" name="category">
+            <input type="radio" id="active" name="category" aria-label="Switch to active todos">
             <label for="active">Active</label>
-            <input type="radio" id="completed" name="category">
+            <input type="radio" id="completed" name="category" aria-label="Switch to completed todos">
             <label for="completed">Completed</label>
         </nav>
-        <button id="clear-completed-btn">Clear completed</button>
-    </div>
+        <button class="clear-completed-btn" aria-label="Clear all completed todos">Clear completed</button>
+    </footer>
 </div>
 </body>
 </html>
