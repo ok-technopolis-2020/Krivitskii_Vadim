@@ -7,6 +7,7 @@
 	--main-font-size: 24px;
 	--main-font-gray-color: #CCCCCC;
 	
+	--todo-element-color: #666666;
 }
 
 body {
@@ -36,7 +37,6 @@ body {
     align-items: center;
 	width: 562px;
 	height: 402px;
-	heigh: 100%;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 	background-color: #FFFFFF;
 }
@@ -61,22 +61,122 @@ body {
 }
 
 .todo-creator_button {
-	width: 10%;
+	margin-top: 25px;
+	margin-left: 15px;
+	margin-right: 12px;
+	display: flex;
+	width: 28px;
+	height: 16px;
 	border: none;
 	background: url(../icons/select-all.png) no-repeat;
-	background-position: center;
+	background-position: center center;
+	background-size: 100%;
 	cursor:pointer;
 }
 
-
-.todo-wrapper footer {
-	width: 100%;
-	height: 43px;
-	display: inline-flex;
-}
-
 .todo-wrapper .todo-list {
+	margin: 0;
+	padding: 0;
 	list-style: none;
 	width: 100%;
 }
 
+
+.todo-list .todo-list_element {
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	height: 63px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Old checkbox */
+
+.todo-list_element .todo-element_checkbox {
+	position: absolute;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	margin-left: 0.74em;
+	width:38px;
+	height:37px;
+}
+
+
+/* Real checkbox */
+
+.todo-list_element .todo-element_check_box {
+	position: absolute;
+	width: 38px;
+	height: 37px;
+	border: 1px solid #E6E6E6;
+	border-radius: 50%;
+	margin-left: 0.55em;
+	cursor:pointer;
+}
+
+
+/* Checked */
+
+.todo-list_element .todo-element_checkbox:checked + .todo-element_check_box{
+	background: url(../icons/completed.png) no-repeat;
+	background-position: center;
+	border: 1px solid green;
+}
+
+/* Focus */
+
+.todo-list_element .todo-element_checkbox:focus: + .todo-element_check_box{
+	border: 2px solid #E6E6E6;
+}
+
+
+
+.todo-list_element .todo-element_name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 2.25em;
+	display: inline-flex;
+	align-items: center;
+	max-width: 90%;
+	font-family: var(--main-font-family);
+	font-style: normal;
+	line-height: 21px;
+	font-weight: 300;
+	font-size: var(--main-font-size); 
+	color: var(--todo-element-color);
+	vertical-align: middle;
+}
+
+.todo-wrapper footer {
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	height: 43px;
+	display: inline-flex;
+	margin-top: auto
+}
+
+footer .items-left {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--main-font-family);
+	font-style: normal;
+	line-height: 21px;
+	font-weight: 300;
+	font-size: 14px;
+	color: #888888;
+}
+
+footer .categories {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--main-font-family);
+	font-style: normal;
+	line-height: 21px;
+	font-weight: 300;
+	font-size: 14px;
+	color: #888888;
+}
+footer .clear-completed-btn {
+	display: inline-flex;
+	align-items: center;
+}
