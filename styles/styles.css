@@ -2,7 +2,7 @@
 
 
 :root {
-	
+	--main-background-color: #FFFFFF;
 	--main-font-family: Roboto;
 	--main-font-size: 24px;
 	--main-font-gray-color: #CCCCCC;
@@ -11,10 +11,6 @@
 	
 	--footer-element-color: #888888;
 	--footer-element-size: 14px;
-}
-
-html {
-	overflow-x: hidden;
 }
 
 body {
@@ -43,7 +39,7 @@ body {
 	width: 100%;
 	min-height: 402px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
-	background-color: #FFFFFF;
+	background-color: var(--main-background-color);
 }
 
 .todo .todo-wrapper::before {
@@ -69,7 +65,7 @@ body {
 	height: 10px;
 	z-index: -2;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
-	background-color: #FFFFFF;
+	background-color: var(--main-background-color);
 }
 
 
@@ -121,7 +117,7 @@ body {
 	align-items: center;
 	width: 100%;
 	min-height: 59px;
-	background: #FFFFFF;
+	background: var(--main-background-color);
 }
 
 .todo-list .todo-list_element {
@@ -176,7 +172,7 @@ body {
 	border-radius: 50%;
 	margin-left: 8px;
 	cursor:pointer;
-	background: #FFFFFF;
+	background: var(--main-background-color);
 }
 
 
