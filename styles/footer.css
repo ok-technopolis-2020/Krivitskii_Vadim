@@ -4,7 +4,7 @@ footer {
 	display: flex;
 }
 
-footer .items-left {
+.items-left {
 	display: inline-flex;
 	align-items: center;
 	font-family: var(--main-font-family);
@@ -16,7 +16,7 @@ footer .items-left {
 	margin-left: 10px;
 }
 
-footer .categories {
+.categories {
 	display: inline-flex;
 	align-items: center;
 	font-family: var(--main-font-family);
@@ -28,21 +28,21 @@ footer .categories {
 	margin-left: auto;
 }
 
-footer .categories > input {
+.categories > input {
 	appearance: none;
 }
 
-footer .categories > label {
+.categories > label {
 	border: 1px solid rgba(235,223,223,0.0);
 	cursor: pointer;
 	padding: 0px 5px 0px 5px;
 }
 
-footer .categories > input:checked + label {
+.categories > input:checked + label {
 	border: 1px solid rgba(235,223,223,1);
 	border-radius: 10%;
 }
-footer .clear-completed-btn {
+.clear-completed-btn {
 	display: inline-flex;
 	align-items: center;
 	font-family: var(--main-font-family);
