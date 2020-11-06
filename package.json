@@ -1,0 +1,22 @@
+{
+  "name": "krivitskii_vadim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ok-technopolis-2020/Krivitskii_Vadim.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ok-technopolis-2020/Krivitskii_Vadim/issues"
+  },
+  "homepage": "https://github.com/ok-technopolis-2020/Krivitskii_Vadim#readme",
+  "devDependencies": {
+    "postcss-nested": "^4.2.3"
+  }
+}
