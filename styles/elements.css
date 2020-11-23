@@ -25,9 +25,8 @@
 	width: 20px;
 	height: 20px;
 	border: none;
-	background: url(../icons/close.svg) no-repeat;
-	background-position: center center;
-	background-size: 100%;
+		  background: url(../icons/close.svg) no-repeat center center;
+		  background-size: 100%;
 	cursor:pointer;
 	}
 	
@@ -38,6 +37,11 @@
 	&:hover > .todo-element_delete {
 	left: 95%;
 	}
+}
+
+.selected {
+	border: 0.5px solid slategray;
+	opacity: 1;
 }
 
 
@@ -53,9 +57,8 @@
 	height:37px;
 	
 	&:checked + .todo-element_check_box {
-	background: url(../icons/completed.svg) no-repeat;
-	background-position: center;
-	border: 1px solid #5DC2AF;
+		 background: url(../icons/completed.svg) no-repeat center;
+		 border: 1px solid #5DC2AF;
 	}
 	
 	&:focus + & {
@@ -80,10 +83,7 @@
 
 
 .todo-element_name {
-	padding-right: 5px;
-	padding-bottom: 2px;
-	padding-top: 2px;
-	padding-left: 55px;
+	padding: 2px 5px 2px 55px;
 	display: inline-block;
 	word-break: break-word;
 	align-items: center;
