@@ -1,7 +1,8 @@
+import { TodoElement } from "./modules/todo/todo-element";
+
 const itemsLeft = document.getElementsByClassName("items-left")[0];
 const input = document.getElementById("todo-creator_input");
 let elements = document.querySelectorAll(".todo-list > li");
-
 
 
 init()
@@ -36,6 +37,8 @@ function updateCounter() {
 function initInput() {
     input.addEventListener("keypress", e => {
         if (e.code === "Enter" && input === document.activeElement) {
+            const todoElement = new TodoElement("hi");
+            todoElement.testNow();
             let inputValue = input.value;
             if (inputValue.length > 0) {
                 addElement(inputValue);
