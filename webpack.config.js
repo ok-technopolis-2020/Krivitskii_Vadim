@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 const nested = require('postcss-nested');
 
 module.exports = {
-  entry: './src/app/main.js',
+  entry: './src/app/index.js',
 
   output: {
     path: path.join(__dirname, 'dist'),

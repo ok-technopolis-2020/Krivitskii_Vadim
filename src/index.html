@@ -2,11 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link href="./app/styles/main.css" rel="stylesheet"/>
-    <link href="./app/styles/wrapper.css" rel="stylesheet"/>
-    <link href="./app/styles/header.css" rel="stylesheet"/>
-    <link href="./app/styles/elements.css" rel="stylesheet"/>
-    <link href="./app/styles/footer.css" rel="stylesheet"/>
     <title>TODO APP</title>
 </head>
 <body>
@@ -15,44 +10,12 @@
     <div class="todo-wrapper">
         <nav class="todo-creator">
             <button class="todo-creator_button" aria-label="Add new todo"></button>
-            <input type="text" id="todo-creator_input" placeholder="What needs to be done?" aria-label="Todo name">
+            <form class ="todo-creator_form"> <input type="text" class="todo-creator_input" placeholder="What needs to be done?" aria-label="Todo name"></form>
         </nav>
         <ul class="todo-list">
-            <li class = "todo-element_wrapper">
-                <label class="todo-list_element">
-                    <input type="checkbox" class="todo-element_checkbox" aria-label="Set as done">
-                    <span class="todo-element_check_box"></span>
-                    <span class="todo-element_name">HTML</span>
-                    <button class="todo-element_delete" aria-label="Delete todo"></button>
-                </label>
-            </li>
-            <li class = "todo-element_wrapper">
-                <label class="todo-list_element">
-                    <input type="checkbox" class="todo-element_checkbox" aria-label="Set as done" checked>
-                    <span class="todo-element_check_box"></span>
-                    <span class="todo-element_name">CSS</span>
-                    <button class="todo-element_delete" aria-label="Delete todo"></button>
-                </label>
-            </li>
-            <li class = "todo-element_wrapper">
-                <label class="todo-list_element">
-                    <input type="checkbox" class="todo-element_checkbox" aria-label="Set as done">
-                    <span class="todo-element_check_box"></span>
-                    <span class="todo-element_name">JS</span>
-                    <button class="todo-element_delete" aria-label="Delete todo"></button>
-                </label>
-            </li>
-            <li class = "todo-element_wrapper">
-                <label class="todo-list_element">
-                    <input type="checkbox" class="todo-element_checkbox" aria-label="Set as done">
-                    <span class="todo-element_check_box"></span>
-                    <span class="todo-element_name">JS tools</span>
-                    <button class="todo-element_delete" aria-label="Delete todo"></button>
-                </label>
-            </li>
         </ul>
         <footer>
-            <span class="items-left">3 items left</span>
+            <span class="items-left">0 items left</span>
             <nav class="categories">
                 <input type="radio" id="all" name="category" aria-label="Switch to all todos" checked>
                 <label for="all">All</label>
@@ -65,6 +28,6 @@
         </footer>
     </div>
 </div>
-<script src="./app/main.js" type="text/javascript"></script>
+<script src="./app/index.js" type="text/javascript"></script>
 </body>
 </html>
