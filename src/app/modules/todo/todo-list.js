@@ -10,7 +10,6 @@ export class TodoList {
 
     constructor(DOMElement) {
         this.#DOMElement = DOMElement;
-        this._DOMElement = DOMElement;
     }
 
 
@@ -52,7 +51,7 @@ export class TodoList {
             todoWrapper.decreaseCounter();
         })
 
-        const todoElement = new TodoElement(li.id, li, name, false);
+        const todoElement = new TodoElement(li.id, li, name);
         this.#todoElements.push(todoElement);
         this.#DOMElement.appendChild(li);
         li.draggable = true;
@@ -69,6 +68,6 @@ export class TodoList {
     }
 
     get DOMElement() {
-        return this._DOMElement;
+        return this.#DOMElement;
     }
 }

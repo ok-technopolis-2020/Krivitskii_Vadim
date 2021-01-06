@@ -1,4 +1,5 @@
 import {TodoList} from "./todo-list";
+import {LangUtil} from "../util/lang";
 
 export class TodoWrapper {
 
@@ -32,7 +33,6 @@ export class TodoWrapper {
         this.#initInput();
         this.#initClearCompleted();
         this.#initSelectAll()
-        this.#initSelectAll();
         this.#initChangeCategory();
     }
 
@@ -53,7 +53,9 @@ export class TodoWrapper {
     #initSelectAll() {
         this.#_selectAllBtnDOM.addEventListener("click", () => {
             this.#_todoList.getTodoElements.forEach(item => item.isCompleted = true)
+            this.#updateCounter();
         })
+
     }
 
     #initClearCompleted() {
@@ -77,21 +79,25 @@ export class TodoWrapper {
     #getCategoryElements(category) {
         const list = this.#_todoList.getTodoElements;
         const size = list.length;
-        if (category === TodoWrapper.CATEGORY_ALL) {
-            TodoWrapper.categoryState = TodoWrapper.CATEGORY_ALL;
-            for (let i = 0; i < size; i++) {
-                list[i].rootElement.hidden = false;
-            }
-        } else if (category === TodoWrapper.CATEGORY_ACTIVE) {
-            TodoWrapper.categoryState = TodoWrapper.CATEGORY_ACTIVE;
-            for (let i = 0; i < size; i++) {
-                list[i].rootElement.hidden = list[i].rootElement.querySelector(".todo-element_checkbox").checked;
-            }
-        } else {
-            TodoWrapper.categoryState = TodoWrapper.CATEGORY_COMPLETED;
-            for (let i = 0; i < size; i++) {
-                list[i].rootElement.hidden = !list[i].rootElement.querySelector(".todo-element_checkbox").checked;
-            }
+        switch (category) {
+            case (TodoWrapper.CATEGORY_ALL):
+                TodoWrapper.categoryState = TodoWrapper.CATEGORY_ALL;
+                for (let i = 0; i < size; i++) {
+                    list[i].rootElement.hidden = false;
+                }
+                break;
+            case (TodoWrapper.CATEGORY_ACTIVE):
+                TodoWrapper.categoryState = TodoWrapper.CATEGORY_ACTIVE;
+                for (let i = 0; i < size; i++) {
+                    list[i].rootElement.hidden = list[i].rootElement.querySelector(".todo-element_checkbox").checked;
+                }
+                break;
+            case (TodoWrapper.CATEGORY_COMPLETED):
+                TodoWrapper.categoryState = TodoWrapper.CATEGORY_COMPLETED;
+                for (let i = 0; i < size; i++) {
+                    list[i].rootElement.hidden = !list[i].rootElement.querySelector(".todo-element_checkbox").checked;
+                }
+                break;
         }
         this.#updateCounter();
     }
@@ -102,7 +108,8 @@ export class TodoWrapper {
         const size = list.length;
         for (let i = 0; i < size; i++) {
             const element = list[i];
-            if (element.isCompleted) {
+            const isCompleted = element.rootElement.querySelector(".todo-element_checkbox").checked
+            if (isCompleted) {
                 element.destroyElement();
             } else {
                 tempTodoList.push(element)
@@ -120,7 +127,7 @@ export class TodoWrapper {
         this.#updateCounter();
     }
 
-     decreaseCounter(amount) {
+    decreaseCounter(amount) {
         if (amount === undefined) {
             amount = 1;
         }
@@ -136,11 +143,8 @@ export class TodoWrapper {
             }
         })
         TodoWrapper.itemsLeft = left;
-        if (TodoWrapper.itemsLeft === 1) {
-            this.#_itemsLeftDOM.innerHTML = `${TodoWrapper.itemsLeft} item left`;
-        } else {
-            this.#_itemsLeftDOM.innerHTML = `${TodoWrapper.itemsLeft} items left`;
-        }
+        this.#_itemsLeftDOM.innerHTML = LangUtil.getItemsLeftMsg(left);
+
     }
 
     get todoList() {
